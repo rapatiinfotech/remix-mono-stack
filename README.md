@@ -13,6 +13,7 @@ A modern, full-stack monorepo template built with the latest web technologies fo
 | 💨 [Tailwind CSS](https://tailwindcss.com/) | Utility-first CSS framework |
 | 🔷 [TypeScript](https://www.typescriptlang.org/) | Static type checking for JavaScript |
 | 🔧 [Vite](https://vitejs.dev/) | Next generation frontend tooling |
+| 🧪 [Vitest](https://vitest.dev/) | Unit testing framework powered by Vite |
 | 📏 [ESLint](https://eslint.org/) | Code linting and quality assurance |
 | 💅 [Prettier](https://prettier.io/) | Code formatting |
 
@@ -38,6 +39,7 @@ This Turborepo includes the following packages and applications:
 - `@remixmonostack/ui`: Shared React component library with ShadCN/UI and Tailwind CSS
 - `@remixmonostack/eslint-config`: ESLint configurations for the entire monorepo
 - `@remixmonostack/typescript-config`: Shared TypeScript configurations
+- `@remixmonostack/vite-config`: Shared Vite and Vitest configurations for build and testing
 
 Each package and app is built with 100% [TypeScript](https://www.typescriptlang.org/) for type safety.
 
@@ -109,21 +111,33 @@ pnpx create-react-router@latest backend
 
 ## 🎁 Bonus Features
 
-### 📦 Add Vite Config Package
+### 📦 Add Vite Config Package ✅
 
-For shared Vite configurations across your monorepo:
+This monorepo includes a shared `@remixmonostack/vite-config` package that provides:
 
-```bash
-# Add vite-config package
-# Reference: https://github.com/thedammyking/turborepo-react-router-v7-starter/tree/main/packages/vite-config
+- **Shared Vite configuration**: Base setup with React Router, TailwindCSS, and TypeScript paths
+- **Vitest integration**: Testing configuration with jsdom environment
+- **Latest versions**: Vite 7.x and Vitest 3.x for optimal performance
+
+Usage in your apps:
+```typescript
+// vite.config.ts
+import { baseConfig } from "@remixmonostack/vite-config/base";
+export default baseConfig;
+
+// vitest.config.ts  
+import { mergedConfig } from "@remixmonostack/vite-config/vitest";
+export default mergedConfig;
 ```
 
-### 🧪 Add Vitest for Testing
+### 🧪 Vitest Workspace Setup ✅
 
-```bash
-# Install Vitest for testing apps and packages
-pnpm add -D vitest @vitest/ui
-```
+The monorepo includes a comprehensive testing setup:
+
+- **Workspace configuration**: [`vitest.workspace.ts`](./vitest.workspace.ts) for unified testing
+- **Parallel execution**: Tests run simultaneously across all apps
+- **Turbo integration**: Cached test runs with `turbo test`
+- **Individual app testing**: Each app can run tests independently
 
 ### ⚙️ Development Tools
 
@@ -189,10 +203,50 @@ Turborepo can use [Remote Caching](https://turborepo.com/docs/core-concepts/remo
 | `pnpm dev` | Start development servers for all apps |
 | `pnpm build` | Build all apps and packages |
 | `pnpm lint` | Lint all packages with ESLint |
+| `pnpm test` | Run tests for all apps in watch mode |
+| `pnpm test:run` | Run all tests once (CI mode) |
+| `pnpm test:ui` | Run tests with Vitest UI |
 | `pnpm type-check` | Run TypeScript type checking |
 | `pnpm clean` | Clean all build artifacts |
 
 ## 🧪 Testing & Quality
+
+### 🧪 Testing with Vitest
+
+The monorepo uses Vitest for fast, reliable testing with the following features:
+
+- **Workspace configuration**: Unified testing across all apps and packages
+- **Shared configuration**: Apps use `@remixmonostack/vite-config` for consistent setup
+- **Parallel execution**: Tests run simultaneously for faster feedback
+- **JSdom environment**: Ready for React component testing
+- **Turbo integration**: Intelligent caching and task orchestration
+
+**Test Commands:**
+```bash
+# Run all tests in watch mode
+pnpm test
+turbo test
+
+# Run all tests once (CI mode)  
+pnpm test:run
+turbo test:run
+
+# Run tests with UI
+pnpm test:ui
+turbo test:ui
+
+# Test specific app
+pnpm --filter="apps/frontend" test
+turbo test --filter=frontend
+
+# Test all apps only
+pnpm -r --filter="./apps/*" test:run
+```
+
+**Test Structure:**
+- Tests are located in each app's directory (e.g., `apps/frontend/app/*.test.ts`)
+- Shared test utilities can be added to `@remixmonostack/vite-config`
+- Each app has its own `vitest.config.ts` extending the shared configuration
 
 ### 🔍 Linting
 
@@ -217,11 +271,17 @@ turbo lint --filter=frontend
 remix-mono-stack/
 ├── apps/
 │   ├── frontend/          # React Router 7 frontend app
+│   │   ├── vitest.config.ts
+│   │   └── app/*.test.ts  # Test files
 │   └── backend/           # React Router 7 backend app
+│       ├── vitest.config.ts
+│       └── app/*.test.ts  # Test files
 ├── packages/
 │   ├── ui/                # ShadCN/UI component library
 │   ├── eslint-config/     # Shared ESLint configuration
-│   └── typescript-config/ # Shared TypeScript configuration
+│   ├── typescript-config/ # Shared TypeScript configuration
+│   └── vite-config/       # Shared Vite and Vitest configuration
+├── vitest.workspace.ts    # Vitest workspace configuration
 ├── package.json           # Root package.json
 ├── pnpm-workspace.yaml    # PNPM workspace configuration
 └── turbo.json            # Turborepo configuration
@@ -235,6 +295,8 @@ remix-mono-stack/
 - [💨 Tailwind CSS](https://tailwindcss.com/docs)
 - [📦 Turborepo](https://turbo.build/repo/docs)
 - [🏃‍♂️ PNPM](https://pnpm.io/motivation)
+- [🧪 Vitest](https://vitest.dev/guide/)
+- [🔧 Vite](https://vitejs.dev/guide/)
 
 ### 🛠️ Turborepo Resources
 - [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
