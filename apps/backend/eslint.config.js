@@ -1,4 +1,4 @@
-import { config } from "@remixmonostack/eslint-config/react-internal"
+import { config } from "@remixmonostack/eslint-config/base"
 
 /** @type {import("eslint").Linter.Config[]} */
 export default [
@@ -6,7 +6,7 @@ export default [
   {
     ignores: [
       "build/**", 
-      ".turbo/**", 
+      ".react-router/**", 
       "node_modules/**",
       "*.config.js",
       "*.config.ts",

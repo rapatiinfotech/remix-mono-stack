@@ -27,6 +27,14 @@ export const config = [
     },
   },
   {
-    ignores: ["dist/**"],
+    ignores: [
+      "dist/**", 
+      "build/**", 
+      ".react-router/**", 
+      "node_modules/**",
+      "*.config.js",
+      "*.config.ts",
+      "*.config.mjs"
+    ],
   },
 ];

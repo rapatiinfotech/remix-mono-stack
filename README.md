@@ -188,9 +188,28 @@ Turborepo can use [Remote Caching](https://turborepo.com/docs/core-concepts/remo
 |--------|-------------|
 | `pnpm dev` | Start development servers for all apps |
 | `pnpm build` | Build all apps and packages |
-| `pnpm lint` | Lint all packages |
+| `pnpm lint` | Lint all packages with ESLint |
 | `pnpm type-check` | Run TypeScript type checking |
 | `pnpm clean` | Clean all build artifacts |
+
+## 🧪 Testing & Quality
+
+### 🔍 Linting
+
+The monorepo uses ESLint with shared configurations:
+- **Base config**: For general TypeScript/JavaScript projects
+- **React config**: For React-based applications and components
+
+Each app and package has its own ESLint configuration that extends the shared configs and includes specific ignore patterns for build directories and generated files.
+
+To run linting:
+```bash
+# Lint all packages
+turbo lint
+
+# Lint specific package
+turbo lint --filter=frontend
+```
 
 ## 📚 Project Structure
 
