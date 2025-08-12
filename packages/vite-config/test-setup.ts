@@ -1,14 +1,7 @@
-import { expect, afterEach } from 'vitest'
-import { cleanup } from '@testing-library/react'
-import * as matchers from '@testing-library/jest-dom/matchers'
+import '@testing-library/jest-dom/vitest'
 
-// extends Vitest's expect method with methods from react-testing-library
-expect.extend(matchers)
-
-// runs a cleanup after each test case (e.g. clearing jsdom)
-afterEach(() => {
-  cleanup()
-})
+// React Testing Library v16 automatically cleans up after each test
+// No manual cleanup needed with auto-cleanup enabled
 
 // Global test configuration
 (globalThis as any).IS_REACT_ACT_ENVIRONMENT = true;
