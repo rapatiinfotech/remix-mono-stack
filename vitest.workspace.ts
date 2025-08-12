@@ -1,10 +1,5 @@
-import { defineConfig } from 'vitest/config'
-
-export default defineConfig({
-  test: {
-    projects: [
-      'apps/frontend',
-      'apps/backend',
-    ]
-  }
-})
+export default [
+  'apps/frontend',
+  'apps/backend', 
+  'packages/ui',
+]
