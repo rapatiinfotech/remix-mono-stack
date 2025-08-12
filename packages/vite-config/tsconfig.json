@@ -1,0 +1,9 @@
+{
+  "extends": "@remixmonostack/typescript-config/base.json",
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "dist"
+  },
+  "include": ["**/*.js", "**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

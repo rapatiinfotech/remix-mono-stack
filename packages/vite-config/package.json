@@ -1,0 +1,34 @@
+{
+  "name": "@remixmonostack/vite-config",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    "./base": {
+      "types": "./base.d.ts",
+      "default": "./base.js"
+    },
+    "./vitest": {
+      "types": "./vitest.d.ts", 
+      "default": "./vitest.js"
+    }
+  },
+  "files": [
+    "base.js",
+    "base.d.ts",
+    "vitest.js",
+    "vitest.d.ts",
+    "test-setup.ts"
+  ],
+  "dependencies": {
+    "@react-router/dev": "^7.7.1",
+    "@tailwindcss/vite": "^4.1.4",
+    "vite": "^7.1.2",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.2.4"
+  },
+  "devDependencies": {
+    "@remixmonostack/typescript-config": "workspace:*",
+    "typescript": "^5.9.2"
+  }
+}
