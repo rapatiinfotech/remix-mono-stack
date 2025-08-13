@@ -1,6 +1,17 @@
-# 🚀 Remix Mono Stack
+# 🚀 Remix Mono Stack (Turborepo with React Router v7)
 
 A modern, full-stack monorepo template built with the latest web technologies for scalable React applications.
+
+A Turborepo starter template for a React Router v7 application.
+
+## Using this template
+
+Run the following command:
+
+```sh
+pnpm dlx create-turbo@latest -e https://github.com/rapatiinfotech/remix-mono-stack
+```
+You can use other package managers like `npm` and `yarn` or just clone the repo and install the dependencies.
 
 ## 🛠️ Tech Stack
 
