@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/vitest'
+import '@testing-library/jest-dom/vitest';
 
 // React Testing Library v16 automatically cleans up after each test
 // No manual cleanup needed with auto-cleanup enabled

@@ -8,7 +8,7 @@ Shared Vite and Vitest configuration for the monorepo.
 
 ```javascript
 // vite.config.ts
-import { baseConfig } from "@remixmonostack/vite-config/base";
+import { baseConfig } from '@remixmonostack/vite-config/base';
 export default baseConfig;
 ```
 
@@ -16,7 +16,7 @@ export default baseConfig;
 
 ```javascript
 // vite.config.ts
-import { mergedConfig } from "@remixmonostack/vite-config/vitest";
+import { mergedConfig } from '@remixmonostack/vite-config/vitest';
 export default mergedConfig;
 ```
 
@@ -24,25 +24,30 @@ export default mergedConfig;
 
 ```javascript
 // vite.config.ts
-import { defineConfig, mergeConfig } from "vite";
-import { baseConfig } from "@remixmonostack/vite-config/base";
+import { defineConfig, mergeConfig } from 'vite';
+import { baseConfig } from '@remixmonostack/vite-config/base';
 
-export default mergeConfig(baseConfig, defineConfig({
-  // Your custom configuration
-  server: {
-    port: 3001,
-  },
-}));
+export default mergeConfig(
+    baseConfig,
+    defineConfig({
+        // Your custom configuration
+        server: {
+            port: 3001,
+        },
+    })
+);
 ```
 
 ## What's included
 
 ### Base configuration:
+
 - **TailwindCSS**: For utility-first CSS
 - **React Router**: Development server and build tools
 - **TypeScript paths**: Automatic path mapping from tsconfig.json
 
 ### Vitest configuration:
+
 - **DOM environment**: For React component testing
 - **Global test functions**: `describe`, `it`, `expect` available globally
 - **Test file patterns**: Supports `.test.` and `.spec.` files

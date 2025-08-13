@@ -1,4 +1,4 @@
-import { UserConfig } from "vite";
+import { UserConfig } from 'vite';
 
 export declare const vitestConfig: UserConfig;
 export declare const mergedConfig: UserConfig;

@@ -15,18 +15,18 @@ You can use other package managers like `npm` and `yarn` or just clone the repo 
 
 ## 🛠️ Tech Stack
 
-| Technology | Version | Description |
-|------------|---------|-------------|
-| ⚡ [React Router 7](https://reactrouter.com/) | Latest | Full-stack React framework (formerly Remix) |
-| 📦 [Turborepo](https://turbo.build/) | Latest | High-performance build system for monorepos |
-| 🏃‍♂️ [PNPM](https://pnpm.io/) | Latest | Fast, disk space efficient package manager |
-| 🎨 [ShadCN/UI](https://ui.shadcn.com/) | Latest | Beautiful, accessible React component library |
-| 💨 [Tailwind CSS](https://tailwindcss.com/) | Latest | Utility-first CSS framework |
-| 🔷 [TypeScript](https://www.typescriptlang.org/) | Latest | Static type checking for JavaScript |
-| 🔧 [Vite](https://vitejs.dev/) | 7.1.2+ | Next generation frontend tooling |
-| 🧪 [Vitest](https://vitest.dev/) | 3.2.4+ | Unit testing framework powered by Vite |
-| 🧪 [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) | Latest | Simple and complete testing utilities for React |
-| � [ESLint](https://eslint.org/) | Latest | Code linting and quality assurance |
+| Technology                                                                                | Version | Description                                     |
+| ----------------------------------------------------------------------------------------- | ------- | ----------------------------------------------- |
+| ⚡ [React Router 7](https://reactrouter.com/)                                             | Latest  | Full-stack React framework (formerly Remix)     |
+| 📦 [Turborepo](https://turbo.build/)                                                      | Latest  | High-performance build system for monorepos     |
+| 🏃‍♂️ [PNPM](https://pnpm.io/)                                                               | Latest  | Fast, disk space efficient package manager      |
+| 🎨 [ShadCN/UI](https://ui.shadcn.com/)                                                    | Latest  | Beautiful, accessible React component library   |
+| 💨 [Tailwind CSS](https://tailwindcss.com/)                                               | Latest  | Utility-first CSS framework                     |
+| 🔷 [TypeScript](https://www.typescriptlang.org/)                                          | Latest  | Static type checking for JavaScript             |
+| 🔧 [Vite](https://vitejs.dev/)                                                            | 7.1.2+  | Next generation frontend tooling                |
+| 🧪 [Vitest](https://vitest.dev/)                                                          | 3.2.4+  | Unit testing framework powered by Vite          |
+| 🧪 [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) | Latest  | Simple and complete testing utilities for React |
+| � [ESLint](https://eslint.org/)                                                           | Latest  | Code linting and quality assurance              |
 
 ## 🏁 Quick Start
 
@@ -43,10 +43,12 @@ pnpm install
 This Turborepo includes the following packages and applications:
 
 ### 📱 Apps
+
 - `frontend`: React Router 7 client application with ShadCN/UI components
 - `backend`: React Router 7 server application (full-stack SSR)
 
 ### 📦 Packages
+
 - `@remixmonostack/ui`: Shared React component library with ShadCN/UI and Tailwind CSS
 - `@remixmonostack/eslint-config`: ESLint configurations for the entire monorepo
 - `@remixmonostack/typescript-config`: Shared TypeScript configurations
@@ -97,6 +99,7 @@ rm -rf packages/ui
 ### 📝 Step 4: Update Package Names
 
 Update all `package.json` files to use your naming convention:
+
 - `@remixmonostack/ui`
 - `@remixmonostack/eslint-config`
 - `@remixmonostack/typescript-config`
@@ -132,17 +135,18 @@ This monorepo includes a shared `@remixmonostack/vite-config` package that provi
 - **Latest versions**: Vite 7.1.2+ and Vitest 3.2.4+ for optimal performance
 
 Available configurations:
+
 ```typescript
 // For React Router apps (frontend/backend)
-import { baseConfig } from "@remixmonostack/vite-config/base";
+import { baseConfig } from '@remixmonostack/vite-config/base';
 export default baseConfig;
 
 // For library packages (UI components)
-import { libraryConfig } from "@remixmonostack/vite-config/library";
+import { libraryConfig } from '@remixmonostack/vite-config/library';
 export default libraryConfig;
 
 // For testing configuration
-import { mergedConfig } from "@remixmonostack/vite-config/vitest";
+import { mergedConfig } from '@remixmonostack/vite-config/vitest';
 export default mergedConfig;
 ```
 
@@ -158,11 +162,13 @@ The monorepo includes a comprehensive testing setup with the following features:
 - **Hot reload**: Tests automatically re-run when files change in development
 
 **Current test coverage:**
+
 - ✅ Frontend app: Basic component and routing tests
-- ✅ Backend app: Server-side rendering and API tests  
+- ✅ Backend app: Server-side rendering and API tests
 - ✅ UI package: Component library tests with React Testing Library
 
 **Test execution:**
+
 ```bash
 # Run all tests (6 tests across 3 packages)
 pnpm test:run
@@ -222,27 +228,28 @@ Turborepo can use [Remote Caching](https://turborepo.com/docs/core-concepts/remo
 ### 🔐 Setup Remote Caching
 
 1. **Login to Vercel:**
-   ```bash
-   turbo login
-   ```
+
+    ```bash
+    turbo login
+    ```
 
 2. **Link your repository:**
-   ```bash
-   turbo link
-   ```
+    ```bash
+    turbo link
+    ```
 
 ## 🛠️ Available Scripts
 
-| Script | Description |
-|--------|-------------|
-| `pnpm dev` | Start development servers for all apps |
-| `pnpm build` | Build all apps and packages |
-| `pnpm lint` | Lint all packages with ESLint |
-| `pnpm test` | Run tests for all apps in watch mode |
-| `pnpm test:run` | Run all tests once (CI mode) |
-| `pnpm test:ui` | Run tests with Vitest UI dashboard |
-| `pnpm type-check` | Run TypeScript type checking |
-| `pnpm clean` | Clean all build artifacts |
+| Script            | Description                            |
+| ----------------- | -------------------------------------- |
+| `pnpm dev`        | Start development servers for all apps |
+| `pnpm build`      | Build all apps and packages            |
+| `pnpm lint`       | Lint all packages with ESLint          |
+| `pnpm test`       | Run tests for all apps in watch mode   |
+| `pnpm test:run`   | Run all tests once (CI mode)           |
+| `pnpm test:ui`    | Run tests with Vitest UI dashboard     |
+| `pnpm type-check` | Run TypeScript type checking           |
+| `pnpm clean`      | Clean all build artifacts              |
 
 ### 🚀 Turbo Scripts
 
@@ -253,7 +260,7 @@ Use Turbo for optimized builds with caching:
 turbo dev                    # Start all dev servers
 turbo dev --filter=frontend  # Start specific app
 
-# Building  
+# Building
 turbo build                  # Build all packages
 turbo build --filter=ui      # Build specific package
 
@@ -281,9 +288,10 @@ The monorepo uses Vitest for fast, reliable testing with the following features:
 - **Hot reload**: Tests automatically re-run when files change
 
 **Current Test Status:**
+
 ```
 ✓ @remixmonostack/backend   app/test.spec.tsx (2 tests)
-✓ @remixmonostack/frontend  app/test.spec.tsx (2 tests) 
+✓ @remixmonostack/frontend  app/test.spec.tsx (2 tests)
 ✓ @remixmonostack/ui        src/components/button.test.tsx (2 tests)
 
 Test Files  3 passed (3)
@@ -291,12 +299,13 @@ Tests       6 passed (6)
 ```
 
 **Test Commands:**
+
 ```bash
 # Run all tests in watch mode
 pnpm test
 turbo test
 
-# Run all tests once (CI mode)  
+# Run all tests once (CI mode)
 pnpm test:run
 turbo test:run
 
@@ -314,6 +323,7 @@ pnpm -r --filter="./apps/*" test:run
 ```
 
 **Test Structure:**
+
 - **Apps**: Tests located in `apps/*/app/*.test.ts` for routes and components
 - **Packages**: Tests located in `packages/*/src/**/*.test.ts` for library code
 - **Shared utilities**: Test helpers available in `@remixmonostack/vite-config/test-setup.ts`
@@ -322,12 +332,14 @@ pnpm -r --filter="./apps/*" test:run
 ### 🔍 Linting
 
 The monorepo uses ESLint with shared configurations:
+
 - **Base config**: For general TypeScript/JavaScript projects
 - **React config**: For React-based applications and components
 
 Each app and package has its own ESLint configuration that extends the shared configs and includes specific ignore patterns for build directories and generated files.
 
 To run linting:
+
 ```bash
 # Lint all packages
 turbo lint
@@ -348,7 +360,7 @@ remix-mono-stack/
 │   │   │   └── root.tsx       # Root layout
 │   │   ├── vite.config.ts     # Extends shared config
 │   │   └── vitest.config.ts   # Extends shared test config
-│   └── backend/               # React Router 7 server app  
+│   └── backend/               # React Router 7 server app
 │       ├── app/
 │       │   ├── routes/        # API routes
 │       │   ├── *.test.tsx     # Test files
@@ -388,6 +400,7 @@ remix-mono-stack/
 ### 🚀 Recent Improvements
 
 **August 2025 Updates:**
+
 - Added shared `@remixmonostack/vite-config` package to eliminate configuration duplication
 - Implemented comprehensive Vitest workspace for unified testing across all packages
 - Integrated React Testing Library for robust component testing
@@ -396,6 +409,7 @@ remix-mono-stack/
 - Created test files for all apps and packages with working examples
 
 **Performance Metrics:**
+
 - **Build Time**: Optimized with Turbo caching and parallel execution
 - **Test Speed**: 6 tests complete in ~1ms with jsdom environment
 - **Development**: Hot reload and instant feedback across all packages
@@ -403,6 +417,7 @@ remix-mono-stack/
 ## 🔗 Useful Links
 
 ### 📖 Documentation
+
 - [🚀 React Router 7 Docs](https://reactrouter.com/dev/guides)
 - [🎨 ShadCN/UI Components](https://ui.shadcn.com/docs/components)
 - [💨 Tailwind CSS](https://tailwindcss.com/docs)
@@ -412,6 +427,7 @@ remix-mono-stack/
 - [🔧 Vite](https://vitejs.dev/guide/)
 
 ### 🛠️ Turborepo Resources
+
 - [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
 - [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
 - [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)

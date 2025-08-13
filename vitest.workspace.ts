@@ -1,5 +1,1 @@
-export default [
-  'apps/frontend',
-  'apps/backend', 
-  'packages/ui',
-]
+export default ['apps/frontend', 'apps/backend', 'packages/ui'];
