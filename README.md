@@ -11,6 +11,7 @@ Run the following command:
 ```sh
 pnpm dlx create-turbo@latest -e https://github.com/rapatiinfotech/remix-mono-stack
 ```
+
 You can use other package managers like `npm` and `yarn` or just clone the repo and install the dependencies.
 
 ## 🛠️ Tech Stack
@@ -275,6 +276,60 @@ turbo type-check            # Type check all packages
 ```
 
 ## 🧪 Testing & Quality
+
+### 📝 Conventional Commits
+
+This project enforces conventional commit format using commitlint. All commits must follow this structure:
+
+```
+type(scope): description
+```
+
+#### 🏷️ Common Conventional Commit Types
+
+| Type       | Description                                         | Example                               |
+| ---------- | --------------------------------------------------- | ------------------------------------- |
+| `feat`     | A new feature                                       | `feat: add user authentication`       |
+| `fix`      | A bug fix                                           | `fix: resolve login form validation`  |
+| `docs`     | Documentation changes                               | `docs: update installation guide`     |
+| `style`    | Code style changes (formatting, etc.)               | `style: fix eslint warnings`          |
+| `refactor` | Code changes that neither fix bugs nor add features | `refactor: extract utility functions` |
+| `test`     | Adding or updating tests                            | `test: add button component tests`    |
+| `chore`    | Maintenance tasks, dependency updates               | `chore: update dependencies`          |
+| `config`   | Configuration changes                               | `config: update turbo build settings` |
+
+#### ✅ Valid Commit Examples
+
+```bash
+# Feature commits
+git commit -m "feat: add dark mode toggle"
+git commit -m "feat(ui): implement loading spinner component"
+
+# Bug fixes
+git commit -m "fix: resolve hydration mismatch in SSR"
+git commit -m "fix(frontend): handle empty state properly"
+
+# Documentation
+git commit -m "docs: add API documentation"
+git commit -m "docs(readme): update installation steps"
+
+# Configuration changes
+git commit -m "config: enable auto-install-peers in npmrc"
+git commit -m "chore: update turbo pipeline configuration"
+```
+
+#### ❌ Invalid Commit Examples
+
+```bash
+# Missing type
+git commit -m "updated npmrc"
+
+# Incorrect format
+git commit -m "Added new feature"
+git commit -m "FIX: bug in login"
+```
+
+**Note**: The commit message validation is enforced by husky hooks and commitlint. Invalid commits will be rejected automatically.
 
 ### 🧪 Testing with Vitest
 
