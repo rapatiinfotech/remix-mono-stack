@@ -1,6 +1,7 @@
 {
     "name": "@remixmonostack/root",
     "private": true,
+    "type": "module",
     "author": "Soheb Rapati",
     "scripts": {
         "build": "turbo run build",

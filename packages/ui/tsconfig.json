@@ -1,11 +1,13 @@
 {
-  "extends": "@remixmonostack/typescript-config/react-library.json",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@remixmonostack/ui/*": ["./src/*"]
-    }
-  },
-  "include": ["."],
-  "exclude": ["node_modules", "dist"]
+    "extends": "@remixmonostack/typescript-config/react-library.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@remixmonostack/ui/*": ["./src/*"]
+        },
+        "module": "ESNext",
+        "moduleResolution": "bundler"
+    },
+    "include": ["."],
+    "exclude": ["node_modules", "dist"]
 }

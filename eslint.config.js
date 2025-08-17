@@ -1,4 +1,4 @@
-import { config } from '@pgs/eslint-config/base';
+import { config } from '@remixmonostack/eslint-config/base';
 
 /** @type {import("eslint").Linter.Config} */
 export default [
