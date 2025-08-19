@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from '../shadcn/button';
 import { Link } from 'react-router';
 

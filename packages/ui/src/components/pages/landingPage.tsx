@@ -1,5 +1,5 @@
-import OnBoardLayout from '../layouts/obBoardLayout';
-import { Welcome } from '../welcome/welcome';
+import OnBoardLayout from '../layouts/onboardLayout';
+import { Welcome } from '../composite/welcome';
 
 export default function LandingPage() {
     return (
