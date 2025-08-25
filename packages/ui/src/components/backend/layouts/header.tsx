@@ -1,11 +1,11 @@
-import { Button } from '../shadcn/button';
+import { Button } from '../../shadcn/button';
 import { Link } from 'react-router';
 
 export default function Header() {
     return (
         <header className='bg-background text-foreground sticky top-0 z-50 w-full px-6 py-4'>
             <div className='mx-auto flex items-center justify-between'>
-                <div className='text-xl font-bold'>remixmonostack</div>
+                <div className='text-xl font-bold'>Backend - Remix mono Stack</div>
 
                 <nav className='flex space-x-6'>
                     {/* <Link

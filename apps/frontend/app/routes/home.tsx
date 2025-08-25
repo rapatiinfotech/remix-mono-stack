@@ -1,4 +1,4 @@
-import LandingPage from '@remixmonostack/ui/components/pages/landingPage';
+import LandingPage from '@remixmonostack/ui/components/frontend/pages/landingPage';
 
 export function meta() {
     return [
